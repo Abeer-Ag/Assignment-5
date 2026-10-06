@@ -1,1 +1,22 @@
+import re
 
+print("--- String Character Check ---")
+
+# Accepts the string from user
+user_string = input("Enter a string: ")
+
+# Define the pattern for a-z, A-Z, and 0-9
+# ^ means the beginning of the string
+# [a-zA-Z0-9]+ means one or more of these specific characters
+# $ means the end of the string
+pattern = "^[a-zA-Z0-9]+$"
+
+# Check if the string perfectly matches the pattern
+result = re.match(pattern, user_string)
+
+if result:
+    print("Valid string!")
+    print("The string contains only a-z, A-Z, and 0-9.")
+else:
+    print("Invalid string!")
+    print("The string contains special characters or spaces.")
